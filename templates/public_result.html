@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+        {% if current_user.confirm %}
+            <div class="form_container">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.level.label }}<br>
+                        {{ form.level(class="form-control", type="text") }}<br>
+                        {% for error in form.level.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.content.label }}<br>
+                        {{ form.content(class="form-control", type="text") }}<br>
+                        {% for error in form.content.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.comment.label }}<br>
+                        {{ form.comment(class="form-control", type="text") }}<br>
+                    </p>
+                    <div class="form-group">
+                        <label for="photo">Load Image</label>
+                        <input type="file" name="img" class="form-control-file" id="photo">
+                    </div>
+                    <img id="im">
+                    <button type="submit" class="btn btn-primary">Ok</button>
+                    <div>{{ message }}</div>
+                </form>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}

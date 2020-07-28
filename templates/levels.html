@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="border_shadow sort_type_combo row">
+        <a href="/levels/time" class="btn">
+            <img width="32" height="32" src="/static/img/history.svg">
+        </a>
+        <a href="/levels/top" class="btn">
+            <img width="32" height="32" src="/static/img/crown.svg">
+        </a>
+    </div>
+    {% for current_level in public_levels %}
+        {{ macro.level_form(current_level) }}
+        {% if current_user.id == current_level.author %}
+            <a href="/delete_level/{{ current_level.id }}" class="btn btn-danger">Delete This
+                Level
+            </a>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

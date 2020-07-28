@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <style>
+    .btn{
+        width: 250px;
+        height: 250px;
+    }
+    </style>
+    <center class="margin_50">
+        <form method="post">
+            <button class="round btn btn-danger" type="submit">Delete {{ delete_text }}</button>
+        </form>
+    </center>
+{% endblock %}

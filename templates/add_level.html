@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+        {% if current_user.confirm %}
+            <h2>Create Level</h2>
+            <div class="form_content">
+                <form action="" method="post" enctype="multipart/form-data">
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.title.label }}<br>
+                        {{ form.title(class="form-control", type="text") }}<br>
+                        {% for error in form.title.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.is_private.label }}<br>
+                        {{ form.is_private(class="form-control", type="checkbox") }}<br>
+                        {% for error in form.is_private.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.hard.label }}<br>
+                        {{ form.hard(class="form-control", type="slider") }}<br>
+                        {% for error in form.hard.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.content.label }}<br>
+                        {{ form.content(class="form-control", type="file") }}<br>
+                        {% for error in form.content.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                    </p>
+                    <button type="submit" class="btn btn-primary">Ok</button>
+                    <div>{{ message }}</div>
+                </form>
+            </div>
+
+        {% else %}
+            <h1>Please, confirm your account with email</h1>
+        {% endif %}
+    {% endif %}
+{% endblock %}

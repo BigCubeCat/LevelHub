@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="page">
+        <div class="text">Load Photo</div>
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="photo">Choice File</label>
+                <input type="file" name="img" class="form-control-file" id="photo">
+            </div>
+            <img id="im" width="128" height="128">
+            <button type="submit" class="btn btn-primary">
+                Load Avatar
+            </button>
+        </form>
+    </div>
+    <script src="/static/js/im.js"></script>
+{% endblock %}

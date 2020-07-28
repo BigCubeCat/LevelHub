@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Maze Generator</h1>
+    <div class="form_container">
+        <form action="" method="post" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.width.label }}<br>
+                {{ form.width(class="form-control", type="text") }}<br>
+                {% for error in form.width.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            </p>
+            <p>
+                {{ form.height.label }}<br>
+                {{ form.height(class="form-control", type="text") }}<br>
+                {% for error in form.height.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+            </p>
+            <center>
+                <button type="submit" class="btn btn-primary">
+                    Generate
+                </button>
+            </center>
+            <div>{{ message }}</div>
+        </form>
+    </div>
+{% endblock %}

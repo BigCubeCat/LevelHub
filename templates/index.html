@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if current_user.is_authenticated %}
+        {% if current_user.confirm %}
+            <center class="margin_50">
+                <a class="btn btn-dark button_with_image margin_horizontal" href="/add_level">
+                    <img src="/static/img/maze.svg" width="128" height="128">
+                    <h4 class="button_with_image_text">Public New Level</h4>
+                </a>
+                <a class="btn btn-dark button_with_image margin_horizontal" href="/public_result">
+                    <img src="/static/img/trophy.svg" width="128" height="128">
+                    <h4 class="button_with_image_text">Public New Result</h4>
+                </a>
+            </center>
+            <center class="margin_top">
+                <a class="btn btn-dark button_with_image margin_horizontal" href="/maze_generator">
+                    <img src="/static/img/brain.svg" width="128" height="128">
+                    <h4 class="button_with_image_text">Generate New Level</h4></a>
+                <a class="btn btn-dark button_with_image margin_horizontal" href="/levels">
+                    <img src="/static/img/history.svg" width="128" height="128">
+                    <h4 class="button_with_image_text">Show All Levels</h4></a>
+            </center>
+        {% endif %}
+    {% endif %}
+    <footer class="footer">
+        <a href="https://www.flaticon.com">
+            designed by from Flaticon
+        </a>
+    </footer>
+{% endblock %}

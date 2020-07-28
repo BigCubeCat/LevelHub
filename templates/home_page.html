@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="result margin_50">
+        <center>
+            <div class="container smoal_margin">
+                <table class="text">
+                    <tr>
+                        <td>
+                            <div>
+                                <text><big><big><big>nick: "{{ user_nick }}"</big></big></big></big>
+                                </text>
+                                <br>
+                                <text><big><big>karma: {{ user_karma }}</big></big></text>
+                                <br>
+                                <text><big><big>date: {{ user_modified_date }}</big></big></text>
+                            </div>
+                        </td>
+                        <td class="rightcol">
+                            <img width="100" height="100"
+                                 src="/static/avatars/{{ user_id }}.png"
+                                 alt=""
+                                 class="round">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </center>
+        <center>
+            <table>
+                {% if user_id == current_user.id %}
+                    <tr>
+                        <td><a class="btn btn-dark"
+                               href="/delete_account/{{ current_user.id }}">Delete Account</a></td>
+                        <td><a class="btn btn-dark" href="/logout">Logout User</a></td>
+                        <td><a class="btn btn-dark" href="/change_password/{{ current_user.id }}">
+                            Change password
+                        </a></td>
+                        <td><a class="btn btn-dark" href="/change_nick/{{ current_user.id }}">
+                            Change Nick
+                        </a></td>
+                        <td><a class="btn btn-dark" href="/change_image/{{ current_user.id }}">
+                            Change Image
+                        </a></td>
+                    </tr>
+                {% endif %}
+            </table>
+        </center>
+    </div>
+    {% for current_level in user_levels %}
+        {{ macro.level_form(current_level) }}
+        {% if current_user.id == current_level.author %}
+            <a href="/delete_level/{{ current_level.id }}" class="btn btn-danger">Delete This
+                Level
+            </a>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

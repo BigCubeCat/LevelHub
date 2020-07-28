@@ -1,0 +1,127 @@
+h4 {
+    position: relative;
+    left: 10px;
+}
+
+h5 {
+    position: relative;
+    left: 10px;
+}
+
+.round {
+    border-radius: 100%; /* Радиус скругления */
+    box-shadow: 0 0 0 3px black, 0 0 13px #333; /* Параметры теней */
+}
+
+.border_shadow {
+    border-radius: 15px; /* Радиус скругления */
+    border: 5px solid #343A40;
+    box-shadow: 0 0 0 1px, 0 0 25px #343A40; /* Параметры теней */
+}
+
+.buttons {
+    border-radius: 5px; /* Радиус скругления */
+    border: 3px solid #343A40;
+    box-shadow: 0 0 0 1px, 0 0 1px #343A40;
+    width: 140px;
+}
+
+.user {
+    border-radius: 5px; /* Радиус скругления */
+    border: 5px solid #343A40;
+    box-shadow: 0 0 0 1px, 0 0 25px #343A40; /* Параметры теней */
+    width: 50%;
+    align-content: center;
+}
+
+.buttons {
+    border-radius: 5px; /* Радиус скругления */
+    border: 1px solid #343A40;
+    width: auto;
+}
+
+.gray_border {
+    border: 1px solid #343A40;
+}
+
+.margin_50 {
+    margin-top: 50px;
+}
+
+.smoal_margin {
+    margin-top: 20px;
+}
+
+.margin_horizontal {
+    margin-left: 5%;
+}
+
+.margin_top {
+    margin-top: 5%;
+}
+
+.white_text {
+    text-decoration-color: aliceblue;
+}
+
+.form_content {
+    position: relative;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+
+.button_with_image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.button_with_image_text {
+    position: absolute;
+    align-content: center;
+    text-align: center;
+}
+
+.result_form {
+    border-radius: 15px; /* Радиус скругления */
+    border: 3px solid #343A40;
+    box-shadow: 0 0 0 1px, 0 0 10px #343A40; /* Параметры теней */
+    width: 80%;
+}
+
+table.text {
+    width: 100%; /* Ширина таблицы */
+    border-spacing: 0; /* Расстояние между ячейками */
+}
+
+table.text td {
+    width: 50%; /* Ширина ячеек */
+    vertical-align: top; /* Выравнивание по верхнему краю */
+}
+
+td.rightcol { /* Правая ячейка */
+    text-align: right; /* Выравнивание по правому краю */
+}
+
+.level_title {
+    width: 100%;
+}
+
+.result {
+    border-radius: 15px; /* Радиус скругления */
+    border: 5px solid #343A40;
+    box-shadow: 0 0 0 1px, 0 0 25px #343A40; /* Параметры теней */
+    width: 50%;
+}
+
+.sort_type_combo {
+    position: absolute;
+    top: 100px;
+    right: 25px;
+}
+
+.delete_btn {
+    width: 80%;
+}

@@ -1,0 +1,88 @@
+{% macro level_form(current_level) %}
+    <div class="margin_50 border_shadow">
+        <center class="gray_border">
+            <a class="btn btn-dark level_title" href="/level/{{ current_level.id }}">
+                <h3>{{ current_level.title }}</h3>
+            </a>
+        </center>
+        <div class="container smoal_margin">
+            <table class="text">
+                <tr>
+                    <td>
+                        <div>
+                            <text>
+                                <big><big><big>hard: {{ current_level.hard }}</big></big></big>
+                            </text>
+                            <br>
+                            <text><big><big>date: {{ current_level.modified_date }}</big></big>
+                            </text>
+                            <br>
+                            <table class="text">
+                                <tr>
+                                    <td>
+                                        <text>
+                                            <big><big>author:</big></big></text>
+                                    </td>
+                                    <td class="rightcol">
+                                        <a class="btn" href="/u/{{ current_level.author }}">
+                                            <img class="round" width="32" height="32"
+                                                 src="/static/avatars/{{ current_level.author }}.png">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="buttons" id="index" name="index">
+                            <button onclick="plus_karma({{ current_level.id }});"
+                                    class="btn btn-wight"><img src="/static/img/like.png">
+                            </button>
+                            <a>{{ current_level.karma }}</a>
+                            <button onclick="minus_karma({{ current_level.id }})"
+                                    class="btn btn-wight"><img
+                                    src="/static/img/dislike.png"></button>
+                        </div>
+                    </td>
+                    <td class="rightcol">
+                        <a href="/static/levels/{{ current_level.id }}.level" download
+                           class="download btn btn-dark"><img
+                                src="/static/img/download.png"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script src="/static/js/change_karma.js">
+        </script>
+    </div>
+{% endmacro %}
+{% macro result_form(current_result, current_level) %}
+    <div class="margin_50 result">
+        <center class="gray_border">
+            <h3 href="/level/{{ current_level.id }}">result for:
+                <big>{{ current_level.title }}</big></h3>
+        </center>
+        <div class="container smoal_margin">
+            <table class="text">
+                <tr>
+                    <td>
+                        <div>
+                            <text>
+                                <big><big><big><big>Score: {{ current_result.score }}</big></big></big></big>
+                            </text>
+                        </div>
+                        <div class="buttons" id="index" name="index">
+                            <button onclick="plus_karma_result({{ current_result.id }});"
+                                    class="btn btn-wight"><img src="/static/img/like.png">
+                            </button>
+                            <a>{{ current_result.karma }}</a>
+                            <button onclick="minus_karma_result({{ current_result.id }});"
+                                    class="btn btn-wight"><img src="/static/img/dislike.png">
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script src="/static/js/change_karma_on_result.js">
+        </script>
+    </div>
+{% endmacro %}

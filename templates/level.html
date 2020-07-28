@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <center>
+        {{ macro.level_form(current_level) }}
+        {% if current_user.id == current_level.author %}
+            <center>
+                <a href="/delete_level/{{ current_level.id }}"
+                   class="btn btn-danger smoal_margin">Delete
+                    This
+                    Level
+                </a>
+            </center>
+        {% endif %}
+        {% for current_result in results %}
+            {{ macro.result_form(current_result, current_level) }}
+            {% if current_user.id == current_level.author %}
+                <a href="/delete_result/{{ current_level.id }}" class="btn btn-danger">Delete
+                    This Level
+                </a>
+            {% endif %}
+        {% endfor %}
+    </center>
+{% endblock %}
